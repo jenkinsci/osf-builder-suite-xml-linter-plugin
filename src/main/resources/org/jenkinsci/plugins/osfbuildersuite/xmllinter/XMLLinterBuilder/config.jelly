@@ -1,0 +1,25 @@
+<?jelly escape-by-default='true'?>
+<j:jelly
+    xmlns:j="jelly:core"
+    xmlns:st="jelly:stapler"
+    xmlns:d="jelly:define"
+    xmlns:l="/lib/layout"
+    xmlns:t="/lib/hudson"
+    xmlns:f="/lib/form">
+
+    <f:entry
+        title="XML Path"
+        field="xmlPath"
+        help="/plugin/osf-builder-suite-xml-linter/help/projectConfig-xmlPath.html">
+
+        <f:textbox clazz="required"/>
+    </f:entry>
+
+    <f:entry
+        title="XSD Path"
+        field="xsdPath"
+        help="/plugin/osf-builder-suite-xml-linter/help/projectConfig-xsdPath.html">
+
+        <f:textbox clazz="required"/>
+    </f:entry>
+</j:jelly>
