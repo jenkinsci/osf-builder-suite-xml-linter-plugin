@@ -70,7 +70,7 @@ public class XMLLinterBuilder extends Builder implements SimpleBuildStep {
         logger.println();
         logger.println(String.format("--[B: %s]--", getDescriptor().getDisplayName()));
 
-        workspace.act(new XMLValidateCallable(workspace, listener, xmlPath, xsdPath));
+        workspace.act(new XMLLinterCallable(workspace, listener, xmlPath, xsdPath));
 
         logger.println(String.format("--[E: %s]--", getDescriptor().getDisplayName()));
         logger.println();
@@ -98,7 +98,7 @@ public class XMLLinterBuilder extends Builder implements SimpleBuildStep {
         }
     }
 
-    private static class XMLValidateCallable extends MasterToSlaveFileCallable<Void> {
+    private static class XMLLinterCallable extends MasterToSlaveFileCallable<Void> {
 
         private static final long serialVersionUID = 1L;
 
@@ -108,7 +108,7 @@ public class XMLLinterBuilder extends Builder implements SimpleBuildStep {
         private final String xsdPath;
 
         @SuppressWarnings("WeakerAccess")
-        public XMLValidateCallable(FilePath workspace, TaskListener listener, String xmlPath, String xsdPath) {
+        public XMLLinterCallable(FilePath workspace, TaskListener listener, String xmlPath, String xsdPath) {
             this.workspace = workspace;
             this.listener = listener;
             this.xmlPath = xmlPath;
