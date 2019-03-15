@@ -8,17 +8,25 @@
     xmlns:f="/lib/form">
 
     <f:entry
-        title="XML Path"
-        field="xmlPath"
-        help="/plugin/osf-builder-suite-xml-linter/help/projectConfig-xmlPath.html">
+        title="XSDs Path"
+        field="xsdsPath"
+        help="/plugin/osf-builder-suite-xml-linter/help/projectConfig-xsdsPath.html">
 
         <f:textbox clazz="required"/>
     </f:entry>
 
     <f:entry
-        title="XSD Path"
-        field="xsdPath"
-        help="/plugin/osf-builder-suite-xml-linter/help/projectConfig-xsdPath.html">
+        title="XMLs Path"
+        field="xmlsPath"
+        help="/plugin/osf-builder-suite-xml-linter/help/projectConfig-xmlsPath.html">
+
+        <f:textbox clazz="required"/>
+    </f:entry>
+
+    <f:entry
+        title="Report Path"
+        field="reportPath"
+        help="/plugin/osf-builder-suite-xml-linter/help/projectConfig-reportPath.html">
 
         <f:textbox clazz="required"/>
     </f:entry>

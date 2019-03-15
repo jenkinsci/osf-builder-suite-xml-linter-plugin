@@ -1,2 +1,2 @@
 <?jelly escape-by-default='true'?>
-<div>Lint your XML file against a XSD file</div>
+<div>XML files linter</div>
