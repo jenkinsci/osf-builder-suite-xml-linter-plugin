@@ -231,8 +231,9 @@ public class XMLLinterBuilder extends Builder implements SimpleBuildStep {
 
                             JsonObject error = new JsonObject();
                             error.addProperty("path", relativePath);
-                            error.addProperty("startLine", e.getLineNumber());
-                            error.addProperty("startColumn", e.getColumnNumber());
+                            error.addProperty("start_line", e.getLineNumber());
+                            error.addProperty("end_line", e.getLineNumber());
+                            error.addProperty("annotation_level", "failure");
                             error.addProperty("message", e.getMessage());
 
                             errors.add(error);
@@ -242,8 +243,9 @@ public class XMLLinterBuilder extends Builder implements SimpleBuildStep {
 
                             JsonObject error = new JsonObject();
                             error.addProperty("path", relativePath);
-                            error.addProperty("startLine", 0);
-                            error.addProperty("startColumn", 0);
+                            error.addProperty("start_line", 0);
+                            error.addProperty("end_line", 0);
+                            error.addProperty("annotation_level", "failure");
                             error.addProperty("message", e.getMessage());
 
                             errors.add(error);
@@ -317,8 +319,9 @@ public class XMLLinterBuilder extends Builder implements SimpleBuildStep {
 
                             JsonObject error = new JsonObject();
                             error.addProperty("path", relativePath);
-                            error.addProperty("startLine", e.getLineNumber());
-                            error.addProperty("startColumn", e.getColumnNumber());
+                            error.addProperty("start_line", e.getLineNumber());
+                            error.addProperty("end_line", e.getLineNumber());
+                            error.addProperty("annotation_level", "failure");
                             error.addProperty("message", e.getMessage());
 
                             errors.add(error);
@@ -328,8 +331,9 @@ public class XMLLinterBuilder extends Builder implements SimpleBuildStep {
 
                             JsonObject error = new JsonObject();
                             error.addProperty("path", relativePath);
-                            error.addProperty("startLine", 0);
-                            error.addProperty("startColumn", 0);
+                            error.addProperty("start_line", 0);
+                            error.addProperty("end_line", 0);
+                            error.addProperty("annotation_level", "failure");
                             error.addProperty("message", e.getMessage());
 
                             errors.add(error);
@@ -360,8 +364,8 @@ public class XMLLinterBuilder extends Builder implements SimpleBuildStep {
                     }
                 }
 
-                String randomUUID = Long.toHexString(UUID.randomUUID().getMostSignificantBits());
-                File reportFile = new File(reportDir, String.format("XMLLint_%s.json", randomUUID));
+                String randomUUID = UUID.randomUUID().toString();
+                File reportFile = new File(reportDir, String.format("XMLLint.%s.json", randomUUID));
                 if (reportFile.exists()) {
                     throw new AbortException(String.format(
                             "reportFile=%s already exists!",
