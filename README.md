@@ -1,2 +1,1 @@
-# OSF Builder Suite :: XML Linter
-Lint your XML file against a XSD file
+# ⚠️ THIS PLUGIN IS DEPRECATED AND NO LONGER MANTAINED! DO NOT USE!
